@@ -1,0 +1,3 @@
+[submodule "chapter-2"]
+	path = chapter-2
+	url = https://github.com/bdd-in-action/chapter-2
