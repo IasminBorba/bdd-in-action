@@ -1,0 +1,3 @@
+com/testing/storyRunner/TestRunner.class
+com/testing/pages/githubPage.class
+com/testing/stepDefs/githubStepsDef.class
