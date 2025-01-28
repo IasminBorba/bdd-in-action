@@ -1,0 +1,40 @@
+<div class="story">
+<h1></h1>
+<div class="path">stories/github.story</div>
+<div class="narrative"><h2>Narrative:</h2>
+<div class="element inOrderTo"><span class="keyword inOrderTo">As a</span> user</div>
+<div class="element asA"><span class="keyword asA">I want to</span> perform a search action in github</div>
+<div class="element iWantTo"><span class="keyword iWantTo">So that</span> I can achieve a business goal for validating the correct user</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Search in github</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given launch github page</div>
+<div class="step">When search github &lt;user&gt;</div>
+<div class="step">Then validate &lt;username&gt;</div>
+<table>
+<thead>
+<tr>
+<th>user</th><th>username</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>iasminborba</td><td>Iasmin Borba</td></tr>
+<tr>
+<td>harish1309</td><td>S Harsih</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {user=iasminborba, username=Iasmin Borba}</h3>
+<div class="step successful">Given launch github page</div>
+<div class="step successful">When search github <span class="step parameter">iasminborba</span></div>
+<div class="step successful">Then validate <span class="step parameter">Iasmin Borba</span></div>
+
+<h3 class="example">Example: {user=harish1309, username=S Harsih}</h3>
+<div class="step successful">Given launch github page</div>
+<div class="step successful">When search github <span class="step parameter">harish1309</span></div>
+<div class="step successful">Then validate <span class="step parameter">S Harsih</span></div>
+</div>
+</div>
+</div>
