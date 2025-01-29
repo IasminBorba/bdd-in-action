@@ -5,6 +5,5 @@ import java.util.List;
 
 public interface TimeTable {
     List<String> findLinesThrough(String departingFrom, String goingTo);
-    List<LocalTime> getDepartures(String lineName);
-    int getTravelDuration(String departingFrom, String goingTo);
+    List<LocalTime> getDepartures(String lineName, String departingFrom);
 }
