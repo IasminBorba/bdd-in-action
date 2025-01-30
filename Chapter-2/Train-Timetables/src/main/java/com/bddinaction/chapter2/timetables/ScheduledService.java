@@ -1,7 +1,10 @@
 package com.bddinaction.chapter2.timetables;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.bddinaction.chapter2.util.LocalTimes.at;
 
 public class ScheduledService {
     private final String departure;
@@ -16,11 +19,29 @@ public class ScheduledService {
         this.departureTimes = at;
     }
 
+    public ScheduledService(String from, String to) {
+        this.departure = from;
+        this.destination = to;
+        this.departureTimes = new ArrayList<>();
+    }
+
     public List<LocalTime> getDepartureTimes() {
         return departureTimes;
     }
 
     public boolean goesBetween(String from, String to) {
         return departure.equals(from) && destination.equals(to);
+    }
+
+    public void addTime(String time) {
+        departureTimes.add(at(time));
+    }
+
+    public String getDeparture() {
+        return departure;
+    }
+
+    public String getDestination() {
+        return destination;
     }
 }

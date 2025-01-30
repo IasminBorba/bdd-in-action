@@ -20,7 +20,19 @@ public class InMemoryTimeTable implements TimeTable, CanScheduleServices {
         schedules.put(line, new ScheduledService(from, to, departingAt));
     }
 
-    private Set<Line> lineNames() {
+    public void scheduleService(Line line, ScheduledService scheduled) {
+        schedules.put(line, scheduled);
+    }
+
+    public Line getLineForScheduledService(ScheduledService scheduled) {
+        return schedules.entrySet().stream()
+                .filter(entry -> entry.getValue().equals(scheduled))
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .orElse(null);  // Ou lançar uma exceção caso não encontre
+    }
+
+    public Set<Line> lineNames() {
         return  schedules.keySet();
     }
 

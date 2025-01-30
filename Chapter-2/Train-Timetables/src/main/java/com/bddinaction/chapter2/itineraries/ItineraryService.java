@@ -1,14 +1,23 @@
 package com.bddinaction.chapter2.itineraries;
 
 import com.bddinaction.chapter2.model.Line;
+import com.bddinaction.chapter2.timetables.InMemoryTimeTable;
+import com.bddinaction.chapter2.timetables.ScheduledService;
 import com.bddinaction.chapter2.timetables.TimeTable;
 
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ItineraryService {
     private final TimeTable timeTable;
+    private static final Map<String, Integer> travelTimes = Map.of(
+            "Parramatta-Town Hall-Western", 27,
+            "Epping-Central-Northern", 45,
+            "Epping-Central-Newcastle", 30,
+            "Epping-Central-Epping", 38
+    );
 
     public ItineraryService(TimeTable timeTable) {
         this.timeTable = timeTable;
@@ -16,13 +25,33 @@ public class ItineraryService {
 
     public List<LocalTime> findNextDepartures(String from, String to, LocalTime departureTime) {
         List<Line> lines = timeTable.findLinesThrough(from, to);
+        return getArrivalTimesOnLines(lines, from, departureTime);
+    }
 
+    public List<LocalTime> getArrivalTimesOnLines(List<Line> lines, String station, LocalTime departureTime) {
         return lines.stream()
-                .flatMap(line -> timeTable.getDepartures(line,from)
+                .flatMap(line -> timeTable.getDepartures(line,station)
                 .stream())
-                .filter(trainTime -> trainTime.isAfter(departureTime))
+                .filter(trainTime ->
+                        trainTime.isAfter(departureTime) &&
+                        !trainTime.isAfter(departureTime.plusMinutes(30))
+                )
                 .sorted()
-                .limit(3)
                 .collect(Collectors.toList());
+    }
+
+    public LocalTime estimatedArrivalTime(ScheduledService scheduled) {
+        Line line = ((InMemoryTimeTable) timeTable).getLineForScheduledService(scheduled);
+        String key = scheduled.getDeparture() + "-" + scheduled.getDestination() + "-" + line.getLine();
+
+        // Busca o tempo de viagem no mapa
+        Integer travelTime = travelTimes.get(key);
+
+        if (travelTime == null) {
+            throw new IllegalArgumentException("Não há tempo de viagem estimado para essa rota: " + key);
+        }
+
+        // Retorna o horário de chegada somando o tempo estimado
+        return (scheduled.getDepartureTimes().get(0)).plusMinutes(travelTime);
     }
 }
