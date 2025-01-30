@@ -1,4 +1,4 @@
-package com.bddinaction.chapter2.storyRunner;
+package com.bddinaction.chapter2.jbehave;
 
 import net.serenitybdd.jbehave.SerenityStories;
 

@@ -1,17 +1,21 @@
+package com.bddinaction.chapter2.services
+
 import com.bddinaction.chapter2.itineraries.ItineraryService
+import com.bddinaction.chapter2.model.Line
 import com.bddinaction.chapter2.timetables.InMemoryTimeTable
 import spock.lang.Specification
 
 import java.time.LocalTime
 
 class WhenCalculatingArrivalTimes extends Specification {
-    ItineraryService itineraryService;
     InMemoryTimeTable timeTable = new InMemoryTimeTable();
 
     def "should calculate the correct arrival time"() {
         given:
-        itineraryService = new ItineraryService(timeTable);
-        timeTable.scheduleService("Western Line", [at("7:50"), at("8:02"), at("8:11"), at("8:14")],
+        def itineraryService = new ItineraryService(timeTable);
+
+        Line westernLine = Line.named("Western").departingFrom("Emu Plains")
+        timeTable.scheduleService(westernLine, [at("7:50"), at("8:02"), at("8:11"), at("8:14")],
                 "Parramatta", "Town Hall"
         )
 

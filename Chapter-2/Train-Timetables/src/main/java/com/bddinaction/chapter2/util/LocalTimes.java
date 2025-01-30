@@ -9,12 +9,6 @@ import java.util.stream.Stream;
 import static java.util.Arrays.stream;
 
 public class LocalTimes {
-//    public static List<LocalTime> at2(String... times) {
-//        return Arrays.stream(times)
-//                .map(LocalTime::parse)
-//                .collect(Collectors.toList());
-//    }
-
     public static List<LocalTime> localTimesFrom(String listOfDepartureTimes) {
         return Stream.of(listOfDepartureTimes.split(","))
                 .map(String::trim)

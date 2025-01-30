@@ -1,9 +1,11 @@
 package com.bddinaction.chapter2.timetables;
 
+import com.bddinaction.chapter2.model.Line;
+
 import java.time.LocalTime;
 import java.util.List;
 
 public interface TimeTable {
-    List<String> findLinesThrough(String departingFrom, String goingTo);
-    List<LocalTime> getDepartures(String lineName, String departingFrom);
+    List<Line> findLinesThrough(String departingFrom, String goingTo);
+    List<LocalTime> getDepartures(Line line, String departingFrom);
 }

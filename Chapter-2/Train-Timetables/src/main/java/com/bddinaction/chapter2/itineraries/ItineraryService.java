@@ -2,7 +2,6 @@ package com.bddinaction.chapter2.itineraries;
 
 import com.bddinaction.chapter2.model.Line;
 import com.bddinaction.chapter2.timetables.TimeTable;
-import com.google.common.collect.Lists;
 
 import java.time.LocalTime;
 import java.util.List;
@@ -16,10 +15,10 @@ public class ItineraryService {
     }
 
     public List<LocalTime> findNextDepartures(String from, String to, LocalTime departureTime) {
-        List<String> lines = timeTable.findLinesThrough(from, to);
+        List<Line> lines = timeTable.findLinesThrough(from, to);
 
         return lines.stream()
-                .flatMap(line -> timeTable.getDepartures(line, from)
+                .flatMap(line -> timeTable.getDepartures(line,from)
                 .stream())
                 .filter(trainTime -> trainTime.isAfter(departureTime))
                 .sorted()

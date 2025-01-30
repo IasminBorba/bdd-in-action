@@ -23,8 +23,4 @@ public class ScheduledService {
     public boolean goesBetween(String from, String to) {
         return departure.equals(from) && destination.equals(to);
     }
-
-    public String getLineName() {
-        return departure;
-    }
 }
