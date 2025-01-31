@@ -1,8 +1,8 @@
 package com.bddinaction.chapter2.services
 
+import spock.lang.Specification
 import com.bddinaction.chapter2.model.Line
 import com.bddinaction.chapter2.timetables.InMemoryTimeTable
-import spock.lang.Specification
 
 class WhenFindingLinesThroughStation extends Specification {
     def timeTable = new InMemoryTimeTable();

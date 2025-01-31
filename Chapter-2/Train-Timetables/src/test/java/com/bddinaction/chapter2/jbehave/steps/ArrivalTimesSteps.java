@@ -12,7 +12,6 @@ import static com.bddinaction.chapter2.util.LocalTimes.at;
 
 public class ArrivalTimesSteps {
     InMemoryTimeTable timeTable = new InMemoryTimeTable();
-    ItineraryService itineraryService = new ItineraryService(timeTable);
     ScheduledService scheduled;
     LocalTime trainTime;
 
@@ -29,6 +28,7 @@ public class ArrivalTimesSteps {
 
     @When("I ask for my arrival time")
     public void requestEstimatedArrivalTime() {
+        ItineraryService itineraryService = new ItineraryService(timeTable);
         trainTime = itineraryService.estimatedArrivalTime(scheduled);
     }
 

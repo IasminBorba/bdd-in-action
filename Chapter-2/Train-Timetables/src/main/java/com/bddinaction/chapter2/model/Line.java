@@ -2,8 +2,7 @@ package com.bddinaction.chapter2.model;
 
 import com.google.common.collect.ImmutableList;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Line {
     private final String line;

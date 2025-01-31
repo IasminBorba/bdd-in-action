@@ -3,10 +3,7 @@ package com.bddinaction.chapter2.timetables;
 import com.bddinaction.chapter2.model.Line;
 
 import java.time.LocalTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class InMemoryTimeTable implements TimeTable, CanScheduleServices {
@@ -29,7 +26,7 @@ public class InMemoryTimeTable implements TimeTable, CanScheduleServices {
                 .filter(entry -> entry.getValue().equals(scheduled))
                 .map(Map.Entry::getKey)
                 .findFirst()
-                .orElse(null);  // Ou lançar uma exceção caso não encontre
+                .orElse(null);
     }
 
     public Set<Line> lineNames() {
@@ -50,9 +47,9 @@ public class InMemoryTimeTable implements TimeTable, CanScheduleServices {
 
     @Override
     public List<LocalTime> getDepartures(Line line, String departingFrom) {
-        if (!schedules.containsKey(line)) {
+        if (!schedules.containsKey(line))
             throw new UnknownLineException("No line found: " + line.getLine());
-        }
+
         return schedules.get(line).getDepartureTimes();
     }
 }

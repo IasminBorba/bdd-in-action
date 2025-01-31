@@ -1,0 +1,49 @@
+<story path="stories/calculate_estimated_arrival_times.story" title="">
+<meta>
+<property keyword="@" name="Tell" value="travellers when they will arrive at their destination"/>
+</meta>
+<narrative keyword="Narrative:">
+  <inOrderTo keyword="In order to">plan my voyage more effectively</inOrderTo>
+  <asA keyword="As a">commuter</asA>
+  <iWantTo keyword="I want to">know what time I will arrive at my destination</iWantTo>
+</narrative>
+<scenario keyword="Scenario:" title="Calculate arrival times">
+<examples keyword="Examples:">
+<step>Given I want to go from &lt;departure&gt; to &lt;destination&gt;</step>
+<step>And the next train leaves at &lt;departureTime&gt; on &lt;line&gt; line</step>
+<step>When I ask for my arrival time</step>
+<step>Then the estimated arrival time should be &lt;arrivalTime&gt;</step>
+<parameters>
+<names><name>departure</name><name>destination</name><name>departureTime</name><name>line</name><name>arrivalTime</name></names>
+<values><value>Parramatta</value><value>Town Hall</value><value>08:02</value><value>Western</value><value>08:29</value></values>
+<values><value>Epping</value><value>Central</value><value>08:03</value><value>Northern</value><value>08:48</value></values>
+<values><value>Epping</value><value>Central</value><value>08:07</value><value>Newcastle</value><value>08:37</value></values>
+<values><value>Epping</value><value>Central</value><value>08:13</value><value>Epping</value><value>08:51</value></values>
+</parameters>
+
+<example keyword="Example:">{departure=Parramatta, destination=Town Hall, departureTime=08:02, line=Western, arrivalTime=08:29, Tell=travellers when they will arrive at their destination}</example>
+<step outcome="successful">Given I want to go from <parameter>Parramatta</parameter> to <parameter>Town Hall</parameter></step>
+<step outcome="successful">And the next train leaves at <parameter>08:02</parameter> on <parameter>Western</parameter> line</step>
+<step outcome="successful">When I ask for my arrival time</step>
+<step outcome="successful">Then the estimated arrival time should be <parameter>08:29</parameter></step>
+
+<example keyword="Example:">{departure=Epping, destination=Central, departureTime=08:03, line=Northern, arrivalTime=08:48, Tell=travellers when they will arrive at their destination}</example>
+<step outcome="successful">Given I want to go from <parameter>Epping</parameter> to <parameter>Central</parameter></step>
+<step outcome="successful">And the next train leaves at <parameter>08:03</parameter> on <parameter>Northern</parameter> line</step>
+<step outcome="successful">When I ask for my arrival time</step>
+<step outcome="successful">Then the estimated arrival time should be <parameter>08:48</parameter></step>
+
+<example keyword="Example:">{departure=Epping, destination=Central, departureTime=08:07, line=Newcastle, arrivalTime=08:37, Tell=travellers when they will arrive at their destination}</example>
+<step outcome="successful">Given I want to go from <parameter>Epping</parameter> to <parameter>Central</parameter></step>
+<step outcome="successful">And the next train leaves at <parameter>08:07</parameter> on <parameter>Newcastle</parameter> line</step>
+<step outcome="successful">When I ask for my arrival time</step>
+<step outcome="successful">Then the estimated arrival time should be <parameter>08:37</parameter></step>
+
+<example keyword="Example:">{departure=Epping, destination=Central, departureTime=08:13, line=Epping, arrivalTime=08:51, Tell=travellers when they will arrive at their destination}</example>
+<step outcome="successful">Given I want to go from <parameter>Epping</parameter> to <parameter>Central</parameter></step>
+<step outcome="successful">And the next train leaves at <parameter>08:13</parameter> on <parameter>Epping</parameter> line</step>
+<step outcome="successful">When I ask for my arrival time</step>
+<step outcome="successful">Then the estimated arrival time should be <parameter>08:51</parameter></step>
+</examples>
+</scenario>
+</story>

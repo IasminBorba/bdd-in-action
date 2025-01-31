@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>stories.find_next_train_departures</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+<div class="story">
+<h1></h1>
+<div class="path">stories/find_next_train_departures.story</div>
+<div class="meta">
+<div class="keyword">Meta:</div>
+<div class="property">@Find out what time the next trains for my destination station leave</div>
+</div>
+<div class="narrative"><h2>Narrative:</h2>
+<div class="element inOrderTo"><span class="keyword inOrderTo">In order to</span> plan my trips more effectively</div>
+<div class="element asA"><span class="keyword asA">As a</span> commuter</div>
+<div class="element iWantTo"><span class="keyword iWantTo">I want to</span> know the next trains going to my destination</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Find the optimal itinerary between stations on the same line</h2>
+<div class="step successful">Given <span class="step parameter">Western</span> line trains from <span class="step parameter">Emu Plains</span> leave <span class="step parameter">Parramatta</span> for <span class="step parameter">Town Hall</span> at <span class="step parameter">07:58, 08:00, 08:02, 08:11, 08:14, 08:21, 08:31, 08:36</span></div>
+<div class="step successful">When I want to travel from <span class="step parameter">Parramatta</span> to <span class="step parameter">Town Hall</span> at <span class="step parameter">08:00</span></div>
+<div class="step successful">Then I should be told about the trains at: <span class="step parameter">08:02, 08:11, 08:14, 08:21</span></div>
+</div>
+</div>
+
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

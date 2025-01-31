@@ -1,8 +1,7 @@
 package com.bddinaction.chapter2.timetables;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static com.bddinaction.chapter2.util.LocalTimes.at;
 

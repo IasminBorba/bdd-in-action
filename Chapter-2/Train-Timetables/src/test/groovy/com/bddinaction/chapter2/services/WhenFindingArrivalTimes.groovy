@@ -1,10 +1,10 @@
 package com.bddinaction.chapter2.services
 
+import spock.lang.Specification
 import com.bddinaction.chapter2.itineraries.ItineraryService
 import com.bddinaction.chapter2.model.Line
-import com.bddinaction.chapter2.timetables.InMemoryTimeTable
-import com.bddinaction.chapter2.timetables.ScheduledService
-import spock.lang.Specification
+import com.bddinaction.chapter2.timetables.*
+
 import static com.bddinaction.chapter2.util.LocalTimes.*;
 
 class WhenFindingArrivalTimes extends Specification {

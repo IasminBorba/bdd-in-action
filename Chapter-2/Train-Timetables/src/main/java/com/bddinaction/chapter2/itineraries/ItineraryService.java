@@ -1,13 +1,10 @@
 package com.bddinaction.chapter2.itineraries;
 
 import com.bddinaction.chapter2.model.Line;
-import com.bddinaction.chapter2.timetables.InMemoryTimeTable;
-import com.bddinaction.chapter2.timetables.ScheduledService;
-import com.bddinaction.chapter2.timetables.TimeTable;
+import com.bddinaction.chapter2.timetables.*;
 
 import java.time.LocalTime;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ItineraryService {
@@ -44,14 +41,10 @@ public class ItineraryService {
         Line line = ((InMemoryTimeTable) timeTable).getLineForScheduledService(scheduled);
         String key = scheduled.getDeparture() + "-" + scheduled.getDestination() + "-" + line.getLine();
 
-        // Busca o tempo de viagem no mapa
         Integer travelTime = travelTimes.get(key);
-
-        if (travelTime == null) {
+        if (travelTime == null)
             throw new IllegalArgumentException("Não há tempo de viagem estimado para essa rota: " + key);
-        }
 
-        // Retorna o horário de chegada somando o tempo estimado
         return (scheduled.getDepartureTimes().get(0)).plusMinutes(travelTime);
     }
 }

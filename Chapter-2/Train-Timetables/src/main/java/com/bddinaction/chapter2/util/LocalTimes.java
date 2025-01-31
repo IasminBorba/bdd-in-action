@@ -3,10 +3,7 @@ package com.bddinaction.chapter2.util;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static java.util.Arrays.stream;
+import java.util.stream.*;
 
 public class LocalTimes {
     public static List<LocalTime> localTimesFrom(String listOfDepartureTimes) {

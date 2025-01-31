@@ -1,0 +1,7 @@
+#org.jbehave.core.embedder.StoryManager
+#Fri Jan 31 09:59:08 BRT 2025
+total=0
+threadAverage=0
+threads=1
+stories/find_next_train_departures.story=0
+stories/calculate_estimated_arrival_times.story=0
