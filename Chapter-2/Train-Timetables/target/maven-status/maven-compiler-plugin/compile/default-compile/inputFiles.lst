@@ -1,8 +1,0 @@
-/home/icborba@sefaz.al.gov.br/bdd-in-action/Chapter-2/Train-Timetables/src/main/java/com/bddinaction/chapter2/model/Line.java
-/home/icborba@sefaz.al.gov.br/bdd-in-action/Chapter-2/Train-Timetables/src/main/java/com/bddinaction/chapter2/timetables/InMemoryTimeTable.java
-/home/icborba@sefaz.al.gov.br/bdd-in-action/Chapter-2/Train-Timetables/src/main/java/com/bddinaction/chapter2/timetables/TimeTable.java
-/home/icborba@sefaz.al.gov.br/bdd-in-action/Chapter-2/Train-Timetables/src/main/java/com/bddinaction/chapter2/timetables/CanScheduleServices.java
-/home/icborba@sefaz.al.gov.br/bdd-in-action/Chapter-2/Train-Timetables/src/main/java/com/bddinaction/chapter2/timetables/UnknownLineException.java
-/home/icborba@sefaz.al.gov.br/bdd-in-action/Chapter-2/Train-Timetables/src/main/java/com/bddinaction/chapter2/util/LocalTimes.java
-/home/icborba@sefaz.al.gov.br/bdd-in-action/Chapter-2/Train-Timetables/src/main/java/com/bddinaction/chapter2/itineraries/ItineraryService.java
-/home/icborba@sefaz.al.gov.br/bdd-in-action/Chapter-2/Train-Timetables/src/main/java/com/bddinaction/chapter2/timetables/ScheduledService.java

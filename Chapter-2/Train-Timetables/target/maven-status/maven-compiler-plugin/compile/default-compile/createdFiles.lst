@@ -1,9 +1,0 @@
-com/bddinaction/chapter2/timetables/TimeTable.class
-com/bddinaction/chapter2/model/Line$LineBuilder.class
-com/bddinaction/chapter2/itineraries/ItineraryService.class
-com/bddinaction/chapter2/timetables/InMemoryTimeTable.class
-com/bddinaction/chapter2/timetables/ScheduledService.class
-com/bddinaction/chapter2/model/Line.class
-com/bddinaction/chapter2/timetables/CanScheduleServices.class
-com/bddinaction/chapter2/timetables/UnknownLineException.class
-com/bddinaction/chapter2/util/LocalTimes.class
